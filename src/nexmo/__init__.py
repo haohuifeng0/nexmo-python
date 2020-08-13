@@ -550,7 +550,7 @@ class Client:
         payload = dict(self.auth_params)
         payload.setdefault("application_id", self.application_id)
         payload.setdefault("iat", iat)
-        payload.setdefault("exp", iat + 60)
+        # payload.setdefault("exp", iat + 60)
         payload.setdefault("jti", str(uuid4()))
 
         return jwt.encode(payload, self.private_key, algorithm="RS256")
